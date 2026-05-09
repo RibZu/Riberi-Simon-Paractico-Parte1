@@ -33,7 +33,7 @@ Mientras se iba armando la lógica del sistema, surgieron algunas dudas y proble
     *   **Solución:** Creé una tabla llamada `configuracion` para guardar el peso máximo permitido en bytes. Cuando un Editor intenta subir una foto, el código busca ese valor en la base de datos y lo compara con lo que pesa el archivo que está subiendo. Si es más pesado, muestra un error y no guarda la noticia.
 
 *   **Problema:** Hacer que las noticias expiren automáticamente (Regla 11).
-    *   **Solución:** Como en un entorno local (localhost) es difícil usar tareas programadas que corran solas todos los días, lo resolví haciendo que se verifique al entrar al sistema. Cada vez que alguien entra al `panel.php`, se ejecuta una consulta que busca las noticias publicadas que ya superaron los días permitidos (sacados de la configuración) y les cambia el estado a 'Expirada'.
+    *   **Solución:** Lo resolví haciendo que se verifique al entrar al sistema. Cada vez que alguien entra al `panel.php`, se ejecuta una consulta que busca las noticias publicadas que ya superaron los días permitidos (sacados de la configuración) y les cambia el estado a 'Expirada'.
 
 *   **Problema:** Armar el proyecto en capas sin usar CodeIgniter u otro framework.
     *   **Solución:** Armé un esquema **MVC (Modelo-Vista-Controlador)** manual y sencillo. Separé los archivos en tres carpetas principales: `vistas` para todo lo que es diseño HTML y formularios, `modelos` para las consultas a la base de datos, y `controladores` para procesar los datos que mandan los formularios y tomar decisiones.
